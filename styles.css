@@ -60,7 +60,7 @@ button[type="submit"] {
   transition: background 0.2s;
 }
 button[type="submit"]:hover {
-  background: #d1d1d1;
+  background: grey;
 }
 #entries {
   display: flex;
