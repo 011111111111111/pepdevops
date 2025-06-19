@@ -15,26 +15,20 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                script {
-                    sh 'docker build -t $IMAGE_NAME .' 
-                }
+                bat "docker build -t %IMAGE_NAME% ."
             }
         }
         stage('Stop and Remove Old Container') {
             steps {
-                script {
-                    sh '''
-                    docker stop $CONTAINER_NAME || true
-                    docker rm $CONTAINER_NAME || true
-                    '''
-                }
+                bat """
+                docker stop %CONTAINER_NAME% || exit 0
+                docker rm %CONTAINER_NAME% || exit 0
+                """
             }
         }
         stage('Run New Container') {
             steps {
-                script {
-                    sh 'docker run -d -p 8080:80 --name $CONTAINER_NAME $IMAGE_NAME'
-                }
+                bat "docker run -d -p 8080:80 --name %CONTAINER_NAME% %IMAGE_NAME%"
             }
         }
         // Optional: Push to DockerHub
