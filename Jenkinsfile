@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Run New Container') {
             steps {
-                bat "docker run -d -p 8080:80 --name %CONTAINER_NAME% %IMAGE_NAME%"
+                bat "docker run -d -p 8088:80 --name %CONTAINER_NAME% %IMAGE_NAME%"
             }
         }
         // Optional: Push to DockerHub
