@@ -11,15 +11,15 @@ A modern, interactive journaling webpage with a neutral color palette, best UI p
 
 ### 1. Build the Docker image
 ```sh
-docker build -t journal-app .
+docker build -t app-journal .
 ```
 
 ### 2. Run the container
 ```sh
-docker run -d -p 8080:80 --name my-journal journal-app
+docker run -d -p 8088:80 --name my-journal journal-app
 ```
 
-Now open [http://localhost:8080](http://localhost:8080) in your browser.
+Now open [http://localhost:8088](http://localhost:8088) in your browser.
 
 ## File Structure
 - `index.html` — Main HTML file
