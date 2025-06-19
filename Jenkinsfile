@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'journal-app'
+        IMAGE_NAME = 'app-journal'
         CONTAINER_NAME = 'my-journal'
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub') // Optional: if pushing to DockerHub
+        // DOCKERHUB_CREDENTIALS = credentials('dockerhub') // Optional: if pushing to DockerHub
     }
 
     stages {
